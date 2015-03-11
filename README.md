@@ -1,14 +1,23 @@
 Yii 1 Streamlog
-===========
+===============
 
 Send Yii 1 logs to stdout/stderr - created to be used with the php-fpm/nginx Docker stack available at [http://github.com/neam/docker-stack]()
 
 Thanks to Haensel for [this forum post](http://www.yiiframework.com/forum/index.php/topic/30484-yii-log-to-console-stdout/page__view__findpost__p__146923)!
 
+Installation
+------------
+
+Install via composer:
+
+    composer require neam/yii-streamlog:*
+
+Or download the extension, copy the `src` folder to your project and make sure to require the file `LogRoute.php` at some stage of application initiation.
+
 Usage
 -----
 
-Change all your existing routes that use CFileLogRoute to instead use \neam\streamlog\LogRoute:
+Change all your existing routes that use CFileLogRoute to instead use \neam\yii_streamlog\LogRoute:
 
     'components' => array(
         'log' => array(
