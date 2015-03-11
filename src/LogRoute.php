@@ -10,7 +10,7 @@ class LogRoute extends CLogRoute
     {
         $STDOUT = fopen("php://stdout", "w");
         foreach ($logs as $log) {
-            fwrite($STDOUT, $log[0]); //write the message [1] = level, [2]=category
+            fwrite($STDOUT, $log[0] . "\n"); //write the message [1] = level, [2]=category
         }
         fclose($STDOUT);
     }
